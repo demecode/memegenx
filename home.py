@@ -1,4 +1,4 @@
-import urllib3.request
+from urllib3 import request as ur
 import requests
 import keys
 
@@ -32,6 +32,6 @@ print(response)
 
 # Save meme
 
-opener = urllib3.request
+opener = ur.RequestMethods.urlopen()
 opener.addheader('User-Agent', keys.userAgent)
 filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
